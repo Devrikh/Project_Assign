@@ -1,4 +1,4 @@
-# Primtrade AI – Backend + Frontend Assignment
+# Backend Frontend Assignment
 
 ## 📌 Overview
 This project demonstrates a **secure, scalable backend** with **role-based authentication**, CRUD operations for tasks, and a **React/Vite frontend** to interact with the APIs.
