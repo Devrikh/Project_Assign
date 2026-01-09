@@ -1,45 +1,72 @@
-# Backend Frontend Assignment
+# Frontend & Backend Developer Intern Assignment
 
 ## 📌 Overview
-This project demonstrates a **secure, scalable backend** with **role-based authentication**, CRUD operations for tasks, and a **React/Vite frontend** to interact with the APIs.
+This project is a **single full-stack application** developed to fulfill **both Frontend Developer Intern and Backend Developer Intern assignments**.
 
-**Tech Stack:**
-- Backend: Node.js, Express, MongoDB, JWT
-- Frontend: React.js (Vite), Axios, React Router
-- Validation: Zod
-- API Documentation: Swagger
+It demonstrates a **secure, scalable backend** with role-based authentication and well-documented APIs, along with a **modern React (Vite) frontend** that consumes these APIs to provide a complete task management experience.
+
+>  **Note:**  
+> The **same project/codebase** is intentionally used for **both frontend and backend assignments** to showcase end-to-end system design, integration, and real-world development practices.
 
 ---
 
-## 🔹 Features
+## 🛠️ Tech Stack
 
-### Backend
+**Backend**
+- Node.js
+- Express.js
+- MongoDB
+- JWT Authentication
+- Zod (validation)
+- Swagger (OpenAPI 3.0)
+
+**Frontend**
+- React.js (Vite)
+- Axios
+- React Router
+- Tailwind CSS
+
+---
+
+## ✨ Features
+
+### 🔹 Backend Features
 - User registration & login with hashed passwords
-- JWT authentication
-- Role-based access control (user vs admin)
-- CRUD APIs for Tasks
-- Input validation using Zod
-- Swagger API documentation for all endpoints
-- Modular project structure
-
-### Frontend
-- Register & Login users
-- Protected dashboard (JWT required)
-- Create, Read, Update, Delete tasks
-- Role-based delete button (admin/owner)
-- Toggle task status (pending/completed)
-- Logout button
-- Toast notifications for success/error messages
+- JWT-based authentication
+- Role-based access control (`user` / `admin`)
+- CRUD APIs for task management
+- Ownership checks (users can modify/delete their own tasks)
+- Centralized error handling
+- Input validation using Zod schemas
+- Swagger API documentation for all routes
+- Clean, modular, scalable project structure
 
 ---
 
-## 🔹 Installation
+### 🔹 Frontend Features
+- User registration & login flows
+- JWT-based protected routes
+- Task dashboard with authenticated access
+- Create, read, update, and delete tasks
+- Role-based delete button (admin or task owner only)
+- Toggle task status (pending / completed)
+- Search/filter tasks by title
+- User profile display (name, role, avatar)
+- Logout functionality
+- Toast notifications for success and error states
+- Responsive UI with Tailwind CSS
+
+---
+
+## 🛠️ Installation & Setup
 
 ### Backend
 ```bash
 cd backend
 npm install
-node src/server.js   # or use nodemon: npx nodemon src/server.js
+node src/server.js
+# or
+npx nodemon src/server.js
 ```
 
 ### Frontend
@@ -49,26 +76,39 @@ npm install
 npm run dev
 ```
 
-- Backend default port: `http://localhost:5000`
-- Frontend default port: `http://localhost:5173`
+**Default URLs**
+- Backend: `http://localhost:5000`
+- Frontend: `http://localhost:5173`
 
 ---
 
-## 🔹 Usage
+##  Usage
 
-1. Open the frontend in your browser: `http://localhost:5173`
-2. Register a new user or login with existing credentials
-3. Access the dashboard to create, update, and delete tasks
-4. Admin users can delete any task; regular users can delete their own tasks
-5. Toggle task status by clicking on the status label
+1. Open the frontend: `http://localhost:5173`
+2. Register a new user or log in
+3. Access the protected dashboard
+4. Create, update, and delete tasks
+5. Admin users can delete **any task**
+6. Normal users can delete **only their own tasks**
+7. Toggle task status by clicking the status badge
+8. Use the search bar to filter tasks by title
 
-**API Documentation (Swagger):**
+---
+
+##  API Documentation (Swagger)
+
 - URL: `http://localhost:5000/api-docs`
-- Use the **Authorize** button to enter JWT for protected routes
+- Authentication:
+  - Login to get JWT
+  - Click **Authorize**
+  - Enter token as:  
+    ```
+    Bearer <your_jwt_token>
+    ```
 
 ---
 
-## 🔹 Folder Structure
+##  Folder Structure
 
 ```
 backend/
@@ -79,40 +119,40 @@ backend/
  │   ├─ schemas/
  │   ├─ app.js
  │   └─ server.js
+
 frontend/
  ├─ src/
- │   ├─ api/           # Axios instance
- │   ├─ components/    # React components
+ │   ├─ api/            # Axios instance
+ │   ├─ components/     # UI components
+ │   ├─ pages/
  │   ├─ App.jsx
  │   └─ main.jsx
 ```
 
 ---
 
-## 🔹 Scalability Notes
+##  Scalability Notes
 
-- Backend is modular → easy to scale via **microservices**
-- JWT-based stateless authentication → supports horizontal scaling
-- Redis caching can be added for frequently accessed data
-- MongoDB can be **replicated/sharded** for performance
-- Docker-ready deployment for containerization
-
-<!-- --- -->
-
-<!-- ## 🔹 Screenshots
-*(Replace placeholders with actual screenshots)*
-- Register/Login Page: ![Register](screenshots/register.png)
-- Dashboard Page: ![Dashboard](screenshots/dashboard.png)
-- Swagger API Docs: ![Swagger](screenshots/swagger.png) -->
+- Modular backend architecture → easy to scale or split into microservices
+- Stateless JWT authentication → supports horizontal scaling
+- Redis can be added for caching
+- MongoDB supports replication and sharding
+- Docker-ready structure for containerized deployment
+- Frontend easily extendable with pagination, filters, and charts
 
 ---
 
-## 🔹 Testing
+##  Testing
 
-- Use the frontend or Swagger UI to test endpoints
-- Example workflow:
-  1. Register → Login → Save JWT
-  2. Access `/tasks` → Create, Update, Delete tasks
-  3. Ensure role-based delete works (admin vs normal user)
-  4. Check task status toggle functionality
+- APIs tested via:
+  - Frontend UI
+  - Swagger UI
+
+**Suggested Test Flow**
+1. Register → Login → Copy JWT
+2. Test protected routes in Swagger
+3. Create tasks → update → delete
+4. Verify role-based delete permissions
+5. Toggle task status
+6. Test frontend search functionality
 
