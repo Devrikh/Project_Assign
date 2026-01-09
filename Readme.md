@@ -73,10 +73,11 @@ npm run dev
 ```
 backend/
  ├─ src/
- │   ├─ controllers/
+ │   ├─ config/
  │   ├─ middlewares/
- │   ├─ models/
  │   ├─ modules/
+ │   ├─ schemas/
+ │   ├─ app.js
  │   └─ server.js
 frontend/
  ├─ src/
