@@ -1,6 +1,6 @@
 # Frontend & Backend Developer Intern Assignment
 
-## 📌 Overview
+## Overview
 This project is a **single full-stack application** developed to fulfill **both Frontend Developer Intern and Backend Developer Intern assignments**.
 
 It demonstrates a **secure, scalable backend** with role-based authentication and well-documented APIs, along with a **modern React (Vite) frontend** that consumes these APIs to provide a complete task management experience.
@@ -10,7 +10,7 @@ It demonstrates a **secure, scalable backend** with role-based authentication an
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Backend**
 - Node.js
@@ -28,7 +28,7 @@ It demonstrates a **secure, scalable backend** with role-based authentication an
 
 ---
 
-## ✨ Features
+## Features
 
 ### 🔹 Backend Features
 - User registration & login with hashed passwords
@@ -58,7 +58,7 @@ It demonstrates a **secure, scalable backend** with role-based authentication an
 
 ---
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Backend
 ```bash
@@ -82,7 +82,7 @@ npm run dev
 
 ---
 
-##  Usage
+## Usage
 
 1. Open the frontend: `http://localhost:5173`
 2. Register a new user or log in
@@ -95,7 +95,7 @@ npm run dev
 
 ---
 
-##  API Documentation (Swagger)
+## API Documentation (Swagger)
 
 - URL: `http://localhost:5000/api-docs`
 - Authentication:
@@ -108,7 +108,7 @@ npm run dev
 
 ---
 
-##  Folder Structure
+## Folder Structure
 
 ```
 backend/
@@ -131,7 +131,7 @@ frontend/
 
 ---
 
-##  Scalability Notes
+## Scalability Notes
 
 - Modular backend architecture → easy to scale or split into microservices
 - Stateless JWT authentication → supports horizontal scaling
@@ -142,7 +142,7 @@ frontend/
 
 ---
 
-##  Testing
+## Testing
 
 - APIs tested via:
   - Frontend UI
