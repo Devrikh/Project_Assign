@@ -5,22 +5,23 @@ const TaskItem = ({ task, deleteTask, toggleStatus, currentUser }) => {
     currentUser?.role === "admin" || currentUser?.userId === task.userId;
 
   return (
-    <li>
-      <strong>{task.title}</strong> - {task.description} [
-      <span
-        style={{
-          color: task.status === "completed" ? "green" : "orange",
-          cursor: "pointer",
-        }}
-        onClick={() => toggleStatus(task)}
-      >
-        {task.status}
-      </span>
-      ]
+    <li className="task-card">
+      <div>
+        <h4>{task.title}</h4>
+        <p>{task.description}</p>
+
+        <span
+          className={`status ${task.status}`}
+          onClick={() => toggleStatus(task)}
+        >
+          {task.status}
+        </span>
+      </div>
+
       {canDelete && (
         <button
+          className="danger"
           onClick={() => deleteTask(task._id)}
-          style={{ marginLeft: "10px" }}
         >
           Delete
         </button>

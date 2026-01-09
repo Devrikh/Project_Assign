@@ -72,10 +72,15 @@ const logout = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Dashboard</h2>
 
-      <form onSubmit={createTask}>
+<div className="dashboard">
+  <header className="navbar">
+    <h3>Task Dashboard</h3>
+    <button onClick={logout}>Logout</button>
+  </header>
+
+  <div className="content">
+     <form onSubmit={createTask}>
         <input
           placeholder="Title"
           value={newTask.title}
@@ -91,7 +96,6 @@ const logout = () => {
           required
         />
         <button type="submit">Add Task</button>
-        <button onClick={logout}>Logout</button>
 
       </form>
 
@@ -106,7 +110,9 @@ const logout = () => {
           />
         ))}
       </ul>
-    </div>
+  </div>
+</div>
+
   );
 };
 

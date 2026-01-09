@@ -16,7 +16,7 @@ const Login = () => {
     try {
       const res = await API.post("/auth/login", form);
       localStorage.setItem("token", res.data.token);
-       toast.success("Login successful!");
+      toast.success("Login successful!");
       navigate("/dashboard");
     } catch (err) {
       toast.error(err.response?.data?.message || "Error");
@@ -24,11 +24,18 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="email" placeholder="Email" onChange={handleChange} />
-      <input name="password" type="password" placeholder="Password" onChange={handleChange} />
-      <button type="submit">Login</button>
-    </form>
+    <div className="auth-container" >
+      <form className="auth-card" onSubmit={handleSubmit}>
+        <input name="email" placeholder="Email" onChange={handleChange} />
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          onChange={handleChange}
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
 };
 
